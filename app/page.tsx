@@ -1,7 +1,13 @@
-import Image from "next/image";
+import React from 'react'
+import ProgressBar from './components/ProgressBar'
 
-export default function Home() {
+const page = () => {
   return (
-   <div>Main</div>
-  );
+    <div>
+      <ProgressBar />
+    </div>
+  )
+  
 }
+
+export default page
