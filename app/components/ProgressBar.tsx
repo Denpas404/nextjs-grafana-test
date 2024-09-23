@@ -4,7 +4,7 @@ import Style from './ProgressBar.module.css'
 const ProgressBar = () => {
 
     
-const range = "50";
+const range = "91,71";
 
     return (
         // <div className="bg-white rounded-lg w-72 border shadow block m-4 p-4">
