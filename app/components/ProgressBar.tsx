@@ -8,6 +8,7 @@ const ProgressBar = ({ value }: { value: number}) => {
 value = value / 50
 console.log(value)
 
+
     return (
         <div className={Style.progress_bar}>
             <span className={Style.start_label}>CPH</span>
