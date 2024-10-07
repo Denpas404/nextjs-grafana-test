@@ -1,7 +1,10 @@
+
 import React from 'react'
 import Style from './ProgressBar.module.css'
 import { useEffect, useState } from 'react';
-import { fetchMeasurements } from '../services/fetchMeasurements';
+import { fetchMeasurements } from '../../services/fetchMeasurements';
+import car from '../../public/car.png'
+import Image from 'next/image'
 
 const ProgressBar = () => {
     const [number, setNumber] = useState<number>(0);
@@ -25,16 +28,19 @@ const ProgressBar = () => {
     }, []);
     
     //Temporary conversion of the number to a value that can be used in the progress bar 
-    let value = number * 10000;
+    let value = number * 45000;
     
-    const arrowPosition = (value / 7494025) * 100;
+    const arrowPosition = (value / 7494025) * 100 ;
 
     return (
-        <div className='flex-row justify-center text-center font-bold mt-4'>
+        <div className='flex-row justify-center text-center font-bold mt-8'>
             <h1>Jorden rundt</h1>           
-            <div className={Style.progress_bar}>                
+            <div className={Style.progress_bar}> {/* Check modul.css for styling */}
                 <progress className="progress progress-success w-full h-5" value={value} max="7494025"></progress>            
-                <div className={Style.arrow} style={{ left: `${arrowPosition}%` }}></div>
+                <div className={Style.arrow} style={{ left: `${arrowPosition}%` }}>
+                    <Image src={car} alt="Car" width={50} height={50} priority />
+                </div>
+                {/* <div className={Style.arrow} style={{ left: `${arrowPosition}%` }}></div> */}
             </div>
         </div>        
 
